@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://wu6pja75c4gu"]
+
+[ext_resource type="Script" uid="uid://cjcy8ib0otm0h" path="res://scripts/game_board.gd" id="1_o63by"]
+[ext_resource type="PackedScene" uid="uid://yoagopmbt316" path="res://cenas/card.tscn" id="2_jew5m"]
+[ext_resource type="PackedScene" uid="uid://ctfhe1t7qc57c" path="res://cenas/player.tscn" id="2_v3rhr"]
+
+[node name="GameBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o63by")
+
+[node name="mesa" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="fundo_mesa" type="Panel" parent="mesa"]
+self_modulate = Color(0, 6.125226, 0.72664547, 1)
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 654.0
+mouse_filter = 2
+
+[node name="cartas_mesa" type="Control" parent="mesa"]
+anchors_preset = 0
+offset_left = 548.0
+offset_top = 267.0
+offset_right = 548.0
+offset_bottom = 267.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mesa/cartas_mesa"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Card" parent="mesa/cartas_mesa/HBoxContainer" instance=ExtResource("2_jew5m")]
+layout_mode = 2
+
+[node name="Card2" parent="mesa/cartas_mesa/HBoxContainer" instance=ExtResource("2_jew5m")]
+layout_mode = 2
+
+[node name="Card3" parent="mesa/cartas_mesa/HBoxContainer" instance=ExtResource("2_jew5m")]
+layout_mode = 2
+
+[node name="Card4" parent="mesa/cartas_mesa/HBoxContainer" instance=ExtResource("2_jew5m")]
+layout_mode = 2
+
+[node name="Card5" parent="mesa/cartas_mesa/HBoxContainer" instance=ExtResource("2_jew5m")]
+layout_mode = 2
+
+[node name="players" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 548.0
+offset_top = 315.0
+offset_right = 548.0
+offset_bottom = 315.0
+
+[node name="player" parent="players" instance=ExtResource("2_v3rhr")]
+layout_mode = 1
+offset_left = -386.0
+offset_top = -56.0
+offset_right = -386.0
+offset_bottom = -56.0
+
+[node name="player2" parent="players" instance=ExtResource("2_v3rhr")]
+layout_mode = 1
+offset_left = -41.0
+offset_top = 189.0
+offset_right = -41.0
+offset_bottom = 189.0
+
+[node name="player3" parent="players" instance=ExtResource("2_v3rhr")]
+layout_mode = 1
+offset_left = 271.0
+offset_top = -48.0
+offset_right = 271.0
+offset_bottom = -48.0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://yoagopmbt316"]
+
+[ext_resource type="Texture2D" uid="uid://hwgi247yk3p6" path="res://assets/imgs/R_D.png" id="1_dl6mr"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="naipe_carta" type="TextureRect" parent="."]
+layout_mode = 0
+texture = ExtResource("1_dl6mr")
