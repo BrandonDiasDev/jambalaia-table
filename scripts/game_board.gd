@@ -1,6 +1,7 @@
 extends Node
 
 var players_in_table : Array
+var deck : Deck
 
 func _ready() -> void:
 	players_in_table = get_players_in_table()
@@ -8,7 +9,13 @@ func _ready() -> void:
 	
 func _init_game() -> void:
 	set_players()
-	
+	prepare_deck()
+
+func prepare_deck() -> void:
+	deck = Deck.new()
+	deck.init()
+	deck.shuffle()
+
 func set_players() -> void:
 	var players_array = GameSettings.get_players()
 	
@@ -35,19 +42,12 @@ func _give_cards_to_each_player(num_card : int) -> void:
 func _put_cards_on_table(num_card: int) -> void:
 	print("I put %s cards on the table!" % num_card)
 
-
 # set cards()
-
 # set table()
-
 # set big eye ()
-
 # set small eye()
-
 # set dealer()
-
 # start round()
-
 
 ### Sets and Gets
 

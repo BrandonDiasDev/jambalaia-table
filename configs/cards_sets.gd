@@ -1,6 +1,7 @@
+class_name CardsSettings
 extends Node
 
-var _HEARTS_DECK = {
+const _HEARTS_DECK = {
 	"A_H" : null,
 	"2_H" : null,
 	"3_H" : null,
@@ -16,7 +17,7 @@ var _HEARTS_DECK = {
 	"K_H" : null,
 }
 
-var _CUPS_DECK = {
+const _CUPS_DECK = {
 	"A_C" : null,
 	"2_C" : null,
 	"3_C" : null,
@@ -32,7 +33,7 @@ var _CUPS_DECK = {
 	"K_C" : null,
 }
 
-var _SPADES_DECK = {
+const _SPADES_DECK = {
 	"A_S" : null,
 	"2_S" : null,
 	"3_S" : null,
@@ -48,7 +49,7 @@ var _SPADES_DECK = {
 	"K_S" : null,
 }
 
-var _DIAMONDS_DECK = {
+const _DIAMONDS_DECK = {
 	"A_D" : null,
 	"2_D" : null,
 	"3_D" : null,
@@ -63,3 +64,28 @@ var _DIAMONDS_DECK = {
 	"Q_D" : null,
 	"K_D" : null,
 }
+
+static func get_all_config_cards() -> Array:
+	var decks : Array
+	decks.append(_CUPS_DECK)
+	decks.append(_DIAMONDS_DECK)
+	decks.append(_HEARTS_DECK)
+	decks.append(_SPADES_DECK)
+	return decks
+
+static func list_all_config_cards() -> Array:
+	var decks : Array
+	
+	for value in _CUPS_DECK:
+		decks.append(value)
+		
+	for value in _DIAMONDS_DECK:
+		decks.append(value)
+	
+	for value in _HEARTS_DECK:
+		decks.append(value)
+	
+	for value in _SPADES_DECK:
+		decks.append(value)
+		
+	return decks
