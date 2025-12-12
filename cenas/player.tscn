@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctfhe1t7qc57c"]
+[gd_scene load_steps=3 format=3 uid="uid://ctfhe1t7qc57c"]
 
 [ext_resource type="PackedScene" uid="uid://yoagopmbt316" path="res://cenas/card.tscn" id="1_8or6t"]
+[ext_resource type="Script" uid="uid://d2a6p4u4gfjtv" path="res://scripts/player/player.gd" id="1_unwft"]
 
 [node name="player" type="Control" groups=["player"]]
 layout_mode = 3
@@ -18,27 +19,24 @@ grow_vertical = 2
 pivot_offset = Vector2(25, 29)
 size_flags_horizontal = 6
 size_flags_vertical = 6
+script = ExtResource("1_unwft")
 
 [node name="hand_cards" type="Control" parent="."]
 anchors_preset = 0
 
-[node name="Card1" parent="hand_cards" instance=ExtResource("1_8or6t")]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 33.0
-offset_right = 32.0
-offset_bottom = 33.0
-rotation = -0.18682374
-pivot_offset = Vector2(25, 37)
+[node name="H_card_hands" type="HBoxContainer" parent="hand_cards"]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 122.0
+offset_bottom = 113.0
+theme_override_constants/separation = 48
 
-[node name="Card2" parent="hand_cards" instance=ExtResource("1_8or6t")]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 33.0
-offset_right = 67.0
-offset_bottom = 33.0
-rotation = 0.1065843
-pivot_offset = Vector2(25, 38)
+[node name="Card1" parent="hand_cards/H_card_hands" instance=ExtResource("1_8or6t")]
+layout_mode = 2
+
+[node name="Card2" parent="hand_cards/H_card_hands" instance=ExtResource("1_8or6t")]
+layout_mode = 2
 
 [node name="layout" type="Control" parent="."]
 anchors_preset = 0

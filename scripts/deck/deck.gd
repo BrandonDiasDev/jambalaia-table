@@ -29,5 +29,15 @@ func shuffle() -> void:
 
 func get_cards() -> Array:
 	return cards
-
 	
+func draw(qtd_cards : int) -> Array:
+
+	#choose 2 cards and remove it from the deck the top (first element) [0,1,2...] ---> of the array
+	var drawn_cards : Array[String]
+	var poped_card : String
+
+	for i in qtd_cards:
+		poped_card = cards.pop_front()
+		drawn_cards.append(poped_card)
+	  
+	return drawn_cards

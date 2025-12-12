@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://yoagopmbt316"]
+[gd_scene load_steps=3 format=3 uid="uid://yoagopmbt316"]
 
 [ext_resource type="Texture2D" uid="uid://hwgi247yk3p6" path="res://assets/imgs/R_D.png" id="1_dl6mr"]
+[ext_resource type="Script" uid="uid://djmmv4vj4m8t6" path="res://scripts/card/card.gd" id="1_w8edx"]
 
-[node name="Card" type="Control"]
+[node name="Card" type="Control" groups=["card_in_hand"]]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_w8edx")
 
 [node name="naipe_carta" type="TextureRect" parent="."]
 layout_mode = 0
+offset_right = 49.0
+offset_bottom = 65.0
 texture = ExtResource("1_dl6mr")

@@ -23,6 +23,7 @@ GameSettings="*res://configs/game_settings.gd"
 [global_group]
 
 player=""
+card_in_hand=""
 
 [rendering]
 
